@@ -44,7 +44,7 @@ function addSales() {
 // Shows the inputted expenses in the summary div
 function renderExpenses() {
     executeExpOnce();
-    summary.innerHTML += `${expItemInput.value} &nbsp &nbsp &nbsp &nbsp ${expPriceInput.value} &nbsp &nbsp &nbsp $${expPriceInput.value * expQtyInput.value}<br>`;
+    summary.innerHTML += `${expItemInput.value} &nbsp &nbsp &nbsp &nbsp ${expQtyInput.value} &nbsp &nbsp &nbsp $${expPriceInput.value * expQtyInput.value}<br>`;
     //addExpenses();
     expItemInput.value = '';
     expQtyInput.value = '';

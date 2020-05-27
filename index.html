@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1.0">
     <title>Accounting</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
@@ -31,19 +32,18 @@
             </div>
             <p>Sales</p>
             <div class="accfill2">
-
                 <div>
                     <label for="">Item</label><br>
                     <input type="text" id="birdsold" name="birdsold">
-                    <button id="additem">add</button>
-                </div>
-                <div>
-                    <label for="">Price</label><br>
-                    <input type="number" id="sellprice" name="sellprice">
+                    <button id="additem" type="button">add</button>
                 </div>
                 <div>
                     <label for="">Qty</label><br>
                     <input type="number" id="qtysold" name="qtysold">
+                </div>
+                <div>
+                    <label for="">Price</label><br>
+                    <input type="number" id="sellprice" name="sellprice">
                 </div>
             </div>
             <p>Expenses</p>
@@ -51,22 +51,22 @@
                 <div>
                     <label for="">Item</label><br>
                     <input type="text" id="exp" name="exp">
-                    <button id="additemexp">add</button>
-                </div>
-                <div>
-                    <label for="">Price</label><br>
-                    <input type="number" id="expprice" name="expprice">
+                    <button type="button" id="additemexp">add</button>
                 </div>
                 <div>
                     <label for="">Qty</label><br>
                     <input type="number" id="qtyexp" name="qtyexp">
                 </div>
+                <div>
+                    <label for="">Price</label><br>
+                    <input type="number" id="expprice" name="expprice">
+                </div>
             </div>
         </form>
     </div>
     <p id="summary">Summary</p>
-    <p id="acdate">Saturday, 22nd May, 2020</p>
-    <div class="summary"></div>
+    <!--<p id="acdate">Saturday, 22nd May, 2020</p>-->
+    <div id="display" class="summary"></div>
     <svg class="acccheck" width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path
             d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z" />

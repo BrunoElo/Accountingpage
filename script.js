@@ -12,16 +12,19 @@ let expQtyInput = document.getElementById('qtyexp'); // Gets the expense qty
 
 //accDate.addEventListener(onchange, replace);
 addButton.addEventListener('click', render);
+//summary.addEventListener('click', remove);
 addExpButton.addEventListener('click', renderExpenses);
 /*
 function replace() {
     pickedAccDate.innerHTML = accDate.value;
 }*/
-
+let s;
+let e;
 // Shows the inputted sales in the summary div
 function render() {
     executeSalesOnce();
-    summary.innerHTML += `${salesItemInput.value} &nbsp &nbsp &nbsp &nbsp ${salesQtyInput.value} &nbsp &nbsp &nbsp $${salesPriceInput.value * salesQtyInput.value}<br>`;
+    //summary.innerHTML += `${salesItemInput.value} &nbsp &nbsp &nbsp &nbsp ${salesQtyInput.value} &nbsp &nbsp &nbsp $${salesPriceInput.value * salesQtyInput.value}<br>`;
+    s.insertAdjacentHTML("beforeend", `${salesItemInput.value} &nbsp &nbsp &nbsp &nbsp ${salesQtyInput.value} &nbsp &nbsp &nbsp $${salesPriceInput.value * salesQtyInput.value}<br>`);
     //addSales();
     salesItemInput.value = '';
     salesQtyInput.value = '';
@@ -31,7 +34,8 @@ function render() {
 
 // Prints Sales once
 function executeSalesOnce() {
-    summary.innerHTML += 'Sales<br>';
+    summary.innerHTML += '<span id="sale">Sales<br></span>';
+    s = document.getElementById('sale');
     executeSalesOnce = function () { };
 }
 /*
@@ -44,7 +48,9 @@ function addSales() {
 // Shows the inputted expenses in the summary div
 function renderExpenses() {
     executeExpOnce();
-    summary.innerHTML += `${expItemInput.value} &nbsp &nbsp &nbsp &nbsp ${expQtyInput.value} &nbsp &nbsp &nbsp $${expPriceInput.value * expQtyInput.value}<br>`;
+    //summary.innerHTML += `${expItemInput.value} &nbsp &nbsp &nbsp &nbsp ${expQtyInput.value} &nbsp &nbsp &nbsp $${expPriceInput.value * expQtyInput.value}<br>`;
+    e.insertAdjacentHTML("beforeend", `${expItemInput.value} &nbsp &nbsp &nbsp &nbsp ${expQtyInput.value} &nbsp &nbsp &nbsp $${expPriceInput.value * expQtyInput.value}<br>`);
+
     //addExpenses();
     expItemInput.value = '';
     expQtyInput.value = '';
@@ -53,6 +59,12 @@ function renderExpenses() {
 
 // Prints Expense once
 function executeExpOnce() {
-    summary.innerHTML += 'Expenses<br>';
+    summary.innerHTML += '<span id="expen">Expenses<br></span>';
+    e = document.getElementById('expen');
     executeExpOnce = function () { };
+}
+
+// Deletes the added entry from summary div
+function remove() {
+    summary = '';
 }
